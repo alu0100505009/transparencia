@@ -1,0 +1,92 @@
+/* ==========================================================================
+	Author's custom styles
+	========================================================================== */
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: #f5f5f5;
+}
+
+#wrap {
+	height: auto !important;
+	margin: 0 auto -40px;
+	min-height: 100%;
+}
+
+h1 {
+	text-align: center;
+}
+
+hr {
+	background: #4a148c;
+	height: 3px;
+	margin: 20px;
+}
+
+p {
+	text-align: justify;
+	margin: 10px auto;
+	width: 90%;
+}
+
+q {
+	text-align: justify;
+	margin: 10px auto;
+	width: 90%;
+}
+
+
+/* ==========================================================================
+	Diseño del menú
+	========================================================================== */
+
+#menu,
+.dropdown-menu {
+	background: #7a3b7a;
+	font-size: 16px;
+}
+
+#menu a {
+	color: white;
+}
+
+#menu a:hover {
+	background: #a276a2;
+}
+
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+	background: #a276a2 !important;
+}
+
+
+/* ==========================================================================
+	Diseño del footer
+	========================================================================== */
+
+#push,
+#footer {
+	height: 40px;
+}
+
+#footer {
+	background-color: #7a3b7a;
+	border-top: 1px solid #7a3b7a;
+	height: 34px;
+	margin: 0;
+	padding: 5px 0 0;
+}
+
+#footer p {
+	font-size: 12px;
+	text-align: center;
+	color: white;
+}
+
+#footer .container-fluid {
+	background: #7a3b7a none repeat scroll 0 0;
+}
