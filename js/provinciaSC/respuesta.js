@@ -1,4 +1,4 @@
-var map = L.map('map').setView([28.233262, -16.915742], 9);
+var map = L.map('map').setView([28.278825, -16.594223], 10);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
 	maxZoom: 18,
@@ -34,7 +34,9 @@ info.muestra = function () {
 			if (tabla[i].ayuntamiento == ultimoprops.MUNICIPIO) {
 				this._div.innerHTML += '<b>' + tabla[i].ayuntamiento + '<br />' +
 					'<a href=' + tabla[i].urlayuntamiento + ' ' + 'target=”_blank”>' + "URL Ayuntamiento" + '</a> <br />' +
-					'<a href=' + tabla[i].urlportal + ' ' + 'target=”_blank”>' + "URL Portal Transparencia" + '</a>';
+					'<a href=' + tabla[i].urlportal + ' ' + 'target=”_blank”>' + "URL Portal Transparencia" + '</a> <br />' +
+					"Fecha de solicitud: " + '</b>' + tabla[i].fechasolicitud + '<br />' + '<b>' +
+					"Fecha de respuesta: " + '</b>' + tabla[i].fecharespuesta;
 			}
 		}
 	}
@@ -49,7 +51,7 @@ info.addTo(map);
 // Funcion para cargar el spreadsheet
 //-------------------------------------------------------------------
 var tabla = new Array();
-var code = "1-U9NFQTf-ZCZqzzPsQpTuoVWicJtNBGaXFLiQ-qaDY8";
+var code = "1YQ6T8iPq1b2GdXOWGLhBroiqo1EjTskhfepke5695XU";
 
 function cargaTabla() {
 	Tabletop.init({
@@ -84,11 +86,9 @@ document.addEventListener('DOMContentLoaded', cargaTabla);
 // Funcion para pintar los municipios segun su nivel de transparencia
 //-------------------------------------------------------------------
 function getColor(d) {
-	return d == "Alta" ? '#00CC00' :
-		d == "Media" ? '#FF6600' :
-		d == "Baja" ? '#FFFF00' :
-		d == "Nula" ? '#CC0000' :
-		d == "???" ? '#686868' :
+	return d == "Si" ? '#00CC00' :
+		d == "Fuera de plazo" ? '#FF6600' :
+		d == "No" ? '#CC0000' :
 		'#FFEDA0';
 }
 
@@ -108,7 +108,7 @@ function style(feature) {
 				color: 'white',
 				dashArray: '3',
 				fillOpacity: 0.7,
-				fillColor: getColor(tabla[i].nivel)
+				fillColor: getColor(tabla[i].respuesta)
 			};
 		}
 	};
@@ -173,9 +173,9 @@ var legend = L.control({
 
 legend.onAdd = function (map) {
 	var div = L.DomUtil.create('div', 'info legend'),
-		grades = ["???", "Nula", "Baja", "Media", "Alta"],
+		grades = ["Si", "Fuera de plazo", "No"],
 		labels = [];
-	div.innerHTML = '<h4>Transparencia</h4>';
+	div.innerHTML = '<h4>Respuesta a peticiones</h4>';
 	// loop through our density intervals and generate a label with a colored square for each interval
 	for (var i = 0; i < grades.length; i++) {
 		div.innerHTML +=
