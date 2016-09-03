@@ -145,22 +145,7 @@ function highlightFeature(e) {
 	info.muestra();
 }
 
-function showText(e) {
-	var layer = e.target;
-	//console.log(layer.feature.properties.MUNICIPIO);
-	//onmouseover: layer.tooltip(layer.feature.properties.MUNICIPIO);
-	//layer.tooltip(layer.feature.properties.MUNICIPIO);
-	/*var tooltip = L.tooltip({
-		target: layer,
-		map: map,
-		html: layer.feature.properties.MUNICIPIO
-	});
-	onmouseout: tooltip.hide();*/
-	$(document).tooltip({
-  		content: layer.feature.properties.MUNICIPIO
-	});
-}
-//*******************************************************************
+//*********************************************************
 //*******************************************************************
 
 
@@ -203,8 +188,7 @@ function zoomToFeature(e) {
 
 function onEachFeature(feature, layer) {
 	layer.on({
-		click: highlightFeature,
-		mouseover: showText
+		click: highlightFeature
 	});
 }
 
