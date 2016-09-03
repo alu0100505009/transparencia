@@ -1,7 +1,7 @@
 **Mapa web de Transparencia**
 ===================
 
-Esta web, en la que se muestran diferentes mapas de transparencia de la Comunidad Autónoma de Canarias, ha sido creada como modelo para el Trabajo de Fin de Grado de Informática de la Universidad de La Laguna bajo el título de XXXXXXXX.
+Esta web, en la que se muestran diferentes mapas de transparencia de la Comunidad Autónoma de Canarias, ha sido creada como modelo para el Trabajo de Fin de Grado de Informática de la Universidad de La Laguna bajo el título de **"Medidas de mejora de la Transparencia en Canarias - Visualización a través de Mapas Web."**.
 
 La web ha sido creada como posible modelo a seguir en un futuro para la implementación de un control de transparencia basado en etiquetas descritas en la memoria del mismo proyecto.
 
