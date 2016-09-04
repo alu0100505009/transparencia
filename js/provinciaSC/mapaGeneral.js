@@ -86,9 +86,7 @@ document.addEventListener('DOMContentLoaded', cargaTabla);
 function getColor(d) {
 	return d == "Alta" ? '#00CC00' :
 		d == "Media" ? '#FF6600' :
-		d == "Baja" ? '#FFFF00' :
-		d == "Nula" ? '#CC0000' :
-		d == "???" ? '#686868' :
+		d == "Baja" ? '#CC0000' :
 		'#FFEDA0';
 }
 
@@ -159,7 +157,7 @@ var legend = L.control({
 
 legend.onAdd = function (map) {
 	var div = L.DomUtil.create('div', 'info legend'),
-		grades = ["???", "Nula", "Baja", "Media", "Alta"],
+		grades = ["Alta", "Media", "Baja"],
 		labels = [];
 	div.innerHTML = '<h4>Transparencia</h4>';
 	// loop through our density intervals and generate a label with a colored square for each interval
