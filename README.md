@@ -18,5 +18,5 @@ Actualmente se han encontrado varios bugs consecuencia de fusionar Bootstrap 3 y
 
 > **Lista de Bugs:**
 
-> - El menú desplegable deja de funcionar cuando se hace click sobre algun municipio del mapa.
+> - El menú desplegable deja de funcionar cuando se hace click sobre algun municipio del mapa. (solucionado)
 
