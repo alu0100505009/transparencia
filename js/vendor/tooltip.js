@@ -1,3 +1,4 @@
+var L;
 L.Tooltip = L.Class.extend({
 	
 	options: {
